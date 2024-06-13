@@ -16,12 +16,14 @@ import java.sql.*;
 @WebServlet("/UserData")
 public class UserDataEntry extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	PreparedStatement ps;
 	
 	public void init()
 	{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/GasAgencyDB","root","mprathamsql1810");
+		    ps=conn.prepareStatement("insert into userdata values(?,?,?,?)");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,8 +38,37 @@ public class UserDataEntry extends HttpServlet {
 	 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	   PrintWriter pw=response.getWriter();
-	   pw.println("hello");
+		
+		 PrintWriter pw=response.getWriter();
+		
+		 Integer registration_no=Integer.parseInt(request.getParameter(""));
+		 String name=request.getParameter("");
+		 Integer mobile_no=Integer.parseInt(request.getParameter(""));
+		 String payment=request.getParameter("");
+		 
+//		 Integer registration_no=1123908993;
+//		 String name="raj";
+//		 Integer mobile_no=1112223312;
+//		 String payment="online";
+		 
+		 
+		 
+	     try {
+			ps.setInt(1,registration_no);
+			ps.setString(2, name);
+			ps.setInt(3, mobile_no);
+			ps.setString(4, payment);
+			int x=ps.executeUpdate();
+			if(x>0) {
+				pw.println("data inserton is done");
+			}else {
+				pw.println("data is not inserted");
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
 	}
 
 	 
