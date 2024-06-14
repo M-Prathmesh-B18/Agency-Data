@@ -23,38 +23,22 @@
                    
                 </tr>
               </thead>
-            <form action="./DataInsertPage.html" method="post">   
-              <tbody>
+             <tbody> 
+              <form action="UserDataEntry" method="post">  
                 <tr>
-                  <th scope="row"> <input type="text" placeholder="Enter Registration no"> </th>
+                  <th scope="row"> <input type="text" placeholder="Enter Registration no" name="registration"> </th>
                   <td><input type="text" placeholder="Enter Name" name="username"></td>
                   <td><input type="text" placeholder="Enter Mobile No" name="moblieno"></td>
-                  <td> <input type="radio" id="cash1" name="payment1" value="cash1" name="cash">
+                  <td> <input type="radio" id="cash1" name="payment1" value="cash1" >
                       <label for="cash1">Cash</label>
                   </td>
-                  <td><input type="radio" id="online1" name="payment1" value="online1" name="online">
+                  <td><input type="radio" id="online1" name="payment1" value="online1">
                       <label for="online1">Online</label>
                   </td>
                   <td><input type="submit" name="btn" value="Add"></td>
                    
                 </tr>
               </form>   
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td> <input type="radio" id="cash2" name="payment2" value="cash2">
-                                          <label for="cash2">Cash</label>
-                                      </td>
-                                      <td><input type="radio" id="online2" name="payment2" value="online2">
-                                          <label for="online2">Online</label>
-                                      </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
               </tbody>
             </table>
 
