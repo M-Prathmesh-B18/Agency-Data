@@ -3,6 +3,7 @@ package com.agency;
 import java.io.IOException;
 
 
+
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 
  
-@WebServlet("/UserData")
+@WebServlet("/UserDataEntry")
 public class UserDataEntry extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	PreparedStatement ps;
@@ -41,10 +42,10 @@ public class UserDataEntry extends HttpServlet {
 		
 		 PrintWriter pw=response.getWriter();
 		
-		 Integer registration_no=Integer.parseInt(request.getParameter(""));
-		 String name=request.getParameter("");
-		 Integer mobile_no=Integer.parseInt(request.getParameter(""));
-		 String payment=request.getParameter("");
+		 Integer registration_no=Integer.parseInt(request.getParameter("registration"));
+		 String name=request.getParameter("username");
+		 Integer mobile_no=Integer.parseInt(request.getParameter("mobileno"));
+		 String payment=request.getParameter("payment1");
 		 
 //		 Integer registration_no=1123908993;
 //		 String name="raj";
