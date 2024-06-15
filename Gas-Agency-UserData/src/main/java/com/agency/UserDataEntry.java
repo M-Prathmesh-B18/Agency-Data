@@ -42,9 +42,9 @@ public class UserDataEntry extends HttpServlet {
 		
 		 PrintWriter pw=response.getWriter();
 		
-		 Integer registration_no=Integer.parseInt(request.getParameter("registration"));
+		 String registration_no=request.getParameter("registration");
 		 String name=request.getParameter("username");
-		 Integer mobile_no=Integer.parseInt(request.getParameter("mobileno"));
+		 String mobile_no=request.getParameter("mobileno");
 		 String payment=request.getParameter("payment1");
 		 
 //		 Integer registration_no=1123908993;
@@ -55,9 +55,9 @@ public class UserDataEntry extends HttpServlet {
 		 
 		 
 	     try {
-			ps.setInt(1,registration_no);
+			ps.setString(1,registration_no);
 			ps.setString(2, name);
-			ps.setInt(3, mobile_no);
+			ps.setString(3, mobile_no);
 			ps.setString(4, payment);
 			int x=ps.executeUpdate();
 			if(x>0) {

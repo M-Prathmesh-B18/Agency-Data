@@ -28,11 +28,11 @@
                 <tr>
                   <th scope="row"> <input type="text" placeholder="Enter Registration no" name="registration"> </th>
                   <td><input type="text" placeholder="Enter Name" name="username"></td>
-                  <td><input type="text" placeholder="Enter Mobile No" name="moblieno"></td>
-                  <td> <input type="radio" id="cash1" name="payment1" value="cash1" >
+                  <td><input type="text" placeholder="Enter Mobile No" name="mobileno"></td>
+                  <td> <input type="radio" id="cash1" name="payment1" value="cash" >
                       <label for="cash1">Cash</label>
                   </td>
-                  <td><input type="radio" id="online1" name="payment1" value="online1">
+                  <td><input type="radio" id="online1" name="payment1" value="online">
                       <label for="online1">Online</label>
                   </td>
                   <td><input type="submit" name="btn" value="Add"></td>
