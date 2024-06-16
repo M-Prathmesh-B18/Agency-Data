@@ -4,8 +4,15 @@ public class UserPojo {
    private String registerId;
    private String uname;
    private String mobile;
-   private boolean cash;
-   private boolean online;
+   private String payment;
+   
+   
+public String getPayment() {
+	return payment;
+}
+public void setPayment(String payment) {
+	this.payment = payment;
+}   
 public String getRegisterId() {
 	return registerId;
 }
@@ -24,17 +31,6 @@ public String getMobile() {
 public void setMobile(String mobile) {
 	this.mobile = mobile;
 }
-public boolean isCash() {
-	return cash;
-}
-public void setCash(boolean cash) {
-	this.cash = cash;
-}
-public boolean isOnline() {
-	return online;
-}
-public void setOnline(boolean online) {
-	this.online = online;
-}
+ 
    
 }
