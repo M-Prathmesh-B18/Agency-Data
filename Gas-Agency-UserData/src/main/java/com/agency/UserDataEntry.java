@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,7 @@ public class UserDataEntry extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/GasAgencyDB","root","mprathamsql1810");
-		    ps=conn.prepareStatement("insert into userdata values(?,?,?,?)");
+		    ps=conn.prepareStatement("insert into userdata values(?,?,?,?,?)");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -45,6 +46,7 @@ public class UserDataEntry extends HttpServlet {
 		 String registration_no=request.getParameter("registration");
 		 String name=request.getParameter("username");
 		 String mobile_no=request.getParameter("mobileno");
+		 Integer price=Integer.parseInt(request.getParameter("price"));
 		 String payment=request.getParameter("payment1");
 		 
 //		 Integer registration_no=1123908993;
@@ -58,10 +60,12 @@ public class UserDataEntry extends HttpServlet {
 			ps.setString(1,registration_no);
 			ps.setString(2, name);
 			ps.setString(3, mobile_no);
-			ps.setString(4, payment);
+			ps.setInt(4,price);
+			ps.setString(5, payment);
 			int x=ps.executeUpdate();
 			if(x>0) {
-				pw.println("data inserton is done");
+				RequestDispatcher rd=request.getRequestDispatcher("DataEntry.jsp");
+				rd.forward(request, response);
 			}else {
 				pw.println("data is not inserted");
 			}

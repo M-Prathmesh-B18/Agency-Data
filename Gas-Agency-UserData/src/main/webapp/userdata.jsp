@@ -14,7 +14,7 @@
  
   <%
      Class.forName("com.mysql.jdbc.Driver");
-     Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306:GasAgencyDB","root","mprathamsql1810");
+     Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/GasAgencyDB","root","mprathamsql1810");
      PreparedStatement ps=conn.prepareStatement("select*from userdata");
      ResultSet rs=ps.executeQuery();
      
@@ -25,6 +25,7 @@
     	 us.setRegisterId(rs.getString("Registration_No"));
     	 us.setUname(rs.getString("Name"));
     	 us.setMobile(rs.getString("Mobile_No"));
+    	 us.setPrice(rs.getInt("Price"));
     	 us.setPayment(rs.getString("Payment"));
     	 arr.add(us);
     	 
@@ -75,6 +76,7 @@
                   <th scope="col">Registration No</th>
                   <th scope="col">Name</th>
                   <th scope="col">Mobile No</th>
+                  <th scope="col">Price</th>
                   <th scope="col">Payment</th>
                    
                 </tr>
@@ -90,6 +92,7 @@
                   <th scope="row"><%=up.getRegisterId()%></th>
                   <td><%=up.getUname() %></td>
                   <td><%=up.getMobile() %></td>
+                  <td><%=up.getPrice() %></td>
                   <td> <%=up.getPayment() %></td>
                    
              <% } %>   

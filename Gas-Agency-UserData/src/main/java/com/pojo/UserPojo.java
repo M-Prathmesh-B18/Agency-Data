@@ -4,8 +4,15 @@ public class UserPojo {
    private String registerId;
    private String uname;
    private String mobile;
+   private Integer price;
    private String payment;
    
+   public Integer getPrice() {
+	return price;
+}
+public void setPrice(Integer price) {
+	this.price = price;
+}
    
 public String getPayment() {
 	return payment;
