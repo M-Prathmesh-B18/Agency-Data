@@ -1,11 +1,19 @@
 package com.pojo;
 
 public class UserPojo {
+   private String date;
    private String registerId;
    private String uname;
    private String mobile;
    private Integer price;
    private String payment;
+   
+   public String getDate() {
+	return date;
+}
+public void setDate(String date) {
+	this.date = date;
+}
    
    public Integer getPrice() {
 	return price;

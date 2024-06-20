@@ -4,6 +4,7 @@ import java.io.IOException;
 
 
 
+
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
  
 @WebServlet("/UserDataEntry")
@@ -25,7 +28,7 @@ public class UserDataEntry extends HttpServlet {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/GasAgencyDB","root","mprathamsql1810");
-		    ps=conn.prepareStatement("insert into userdata values(?,?,?,?,?)");
+		    ps=conn.prepareStatement("insert into userdata values(?,?,?,?,?,?)");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -48,6 +51,9 @@ public class UserDataEntry extends HttpServlet {
 		 String mobile_no=request.getParameter("mobileno");
 		 Integer price=Integer.parseInt(request.getParameter("price"));
 		 String payment=request.getParameter("payment1");
+		 LocalDate currentDate=LocalDate.now();
+		 DateTimeFormatter formater=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		 String date =currentDate.format(formater);
 		 
 //		 Integer registration_no=1123908993;
 //		 String name="raj";
@@ -57,11 +63,12 @@ public class UserDataEntry extends HttpServlet {
 		 
 		 
 	     try {
-			ps.setString(1,registration_no);
-			ps.setString(2, name);
-			ps.setString(3, mobile_no);
-			ps.setInt(4,price);
-			ps.setString(5, payment);
+	    	ps.setString(1, date);
+			ps.setString(2,registration_no);
+			ps.setString(3, name);
+			ps.setString(4, mobile_no);
+			ps.setInt(5,price);
+			ps.setString(6, payment);
 			int x=ps.executeUpdate();
 			if(x>0) {
 				RequestDispatcher rd=request.getRequestDispatcher("DataEntry.jsp");

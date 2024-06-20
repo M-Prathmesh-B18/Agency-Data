@@ -22,6 +22,7 @@
      while(rs.next())
      {
     	 UserPojo us=new UserPojo();
+    	 us.setDate(rs.getString("Date"));
     	 us.setRegisterId(rs.getString("Registration_No"));
     	 us.setUname(rs.getString("Name"));
     	 us.setMobile(rs.getString("Mobile_No"));
@@ -73,6 +74,7 @@
        <table class="table">
               <thead>
                 <tr>
+                  <th scope="col">Date</th>
                   <th scope="col">Registration No</th>
                   <th scope="col">Name</th>
                   <th scope="col">Mobile No</th>
@@ -89,6 +91,7 @@
                <%UserPojo up=(UserPojo) i1.next();%>
               
                 <tr>
+                  <td><%=up.getDate() %></td>
                   <th scope="row"><%=up.getRegisterId()%></th>
                   <td><%=up.getUname() %></td>
                   <td><%=up.getMobile() %></td>
