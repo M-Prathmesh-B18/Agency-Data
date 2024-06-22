@@ -12,29 +12,7 @@
 </head>
 <body>
  
-  <%
-     Class.forName("com.mysql.jdbc.Driver");
-     Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/GasAgencyDB","root","mprathamsql1810");
-     PreparedStatement ps=conn.prepareStatement("select*from userdata");
-     ResultSet rs=ps.executeQuery();
-     
-     ArrayList<UserPojo> arr=new ArrayList<>();
-     while(rs.next())
-     {
-    	 UserPojo us=new UserPojo();
-    	 us.setDate(rs.getString("Date"));
-    	 us.setRegisterId(rs.getString("Registration_No"));
-    	 us.setUname(rs.getString("Name"));
-    	 us.setMobile(rs.getString("Mobile_No"));
-    	 us.setPrice(rs.getInt("Price"));
-    	 us.setPayment(rs.getString("Payment"));
-    	 arr.add(us);
-    	 
-     }
   
-  
-  
-  %>
 <%@ include file="NavBar.jsp" %>
   
        <table class="table">
@@ -51,20 +29,10 @@
               </thead>
               <tbody>
               
-              <%ListIterator i1=arr.listIterator(); %>
-              
-            <% while(i1.hasNext()){%>
-               <%UserPojo up=(UserPojo) i1.next();%>
+               
               
                 <tr>
-                  <td><%=up.getDate() %></td>
-                  <th scope="row"><%=up.getRegisterId()%></th>
-                  <td><%=up.getUname() %></td>
-                  <td><%=up.getMobile() %></td>
-                  <td><%=up.getPrice() %></td>
-                  <td> <%=up.getPayment() %></td>
-                   
-             <% } %>   
+                    <%@ include file="FetchingValuesFromDB.jsp" %>  
                    
                 </tr>
                  
