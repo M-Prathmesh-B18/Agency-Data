@@ -32,7 +32,7 @@
                
               
                 <tr>
-                    <%@ include file="FetchingAllValuesFromDB.jsp" %>  
+                      <%@ include file="FetchingValuesFromDBForTODAYsDate.jsp" %>
                    
                 </tr>
                  

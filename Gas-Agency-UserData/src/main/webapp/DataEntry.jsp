@@ -52,7 +52,7 @@
                 </tr>
               </form>  
               <tr>
-               <%@ include file="FetchingValuesFromDB.jsp" %>
+               <%@ include file="FetchingValuesFromDBForTODAYsDate.jsp" %>
               </tr>
                
               </tbody>
