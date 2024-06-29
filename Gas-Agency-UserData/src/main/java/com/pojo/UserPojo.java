@@ -7,8 +7,15 @@ public class UserPojo {
    private String mobile;
    private Integer price;
    private String payment;
+   private Integer total;
    
-   public String getDate() {
+   public Integer getTotal() {
+	return total;
+}
+public void setTotal(Integer total) {
+	this.total = total;
+}
+public String getDate() {
 	return date;
 }
 public void setDate(String date) {
