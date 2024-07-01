@@ -9,6 +9,16 @@
        <title>Document</title>
        <link rel="stylesheet" href="project2tablecss.css">
        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <style type="text/css">
+          .total{
+                color:green;
+                font-weight: 700;
+          }
+          .totalrow{
+                border:1.5px black solid;  
+                       
+          }
+          </style>
 </head>
 <body>
  
@@ -39,11 +49,18 @@
   
         
               
-              <%ListIterator i1=arr.listIterator(); %>
+              <% ListIterator i1=arr.listIterator(); 
+                 Integer no;
+                 Integer total=0;
+              %>
               
             <% while(i1.hasNext()){%>
             
-               <%UserPojo up=(UserPojo) i1.next();%>
+               <% UserPojo up=(UserPojo) i1.next();
+                  no=up.getPrice();             
+                  total=total+no;
+               
+               %>
               
                 <tr>
                   <td><%=up.getDate() %></td>
@@ -54,7 +71,8 @@
                   <td> <%=up.getPayment() %></td>
                  <tr> 
                    
-             <% } %>   
+             <% } %>  
+              
                    
                 
                  
