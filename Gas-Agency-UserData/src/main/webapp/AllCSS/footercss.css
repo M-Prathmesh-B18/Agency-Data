@@ -1,6 +1,10 @@
- .footer-data{
+.footer-data{
        border: 1.5px black solid;
        border-radius: 2px;
+       position: fixed;
+       bottom: 0;
+       padding: 10px;
+       width: 100%;
 
 }
 .foter{
@@ -43,4 +47,3 @@ a{
 }
  
 
- 
