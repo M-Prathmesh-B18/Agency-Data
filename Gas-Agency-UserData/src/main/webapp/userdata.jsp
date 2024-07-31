@@ -19,7 +19,7 @@
               <thead>
                 <tr>
                   <th scope="col">Date</th>
-                  <th scope="col">Registration No</th>
+                  <th scope="col">Customer No</th>
                   <th scope="col">Name</th>
                   <th scope="col">Mobile No</th>
                   <th scope="col">Price</th>

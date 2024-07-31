@@ -2,7 +2,7 @@ package com.pojo;
 
 public class UserPojo {
    private String date;
-   private String registerId;
+   private String customerNo;
    private String uname;
    private String mobile;
    private Integer price;
@@ -35,11 +35,11 @@ public String getPayment() {
 public void setPayment(String payment) {
 	this.payment = payment;
 }   
-public String getRegisterId() {
-	return registerId;
+public String getCustomerNo() {
+	return customerNo;
 }
-public void setRegisterId(String registerId) {
-	this.registerId = registerId;
+public void setCustomerNo(String customerNo) {
+	this.customerNo = customerNo;
 }
 public String getUname() {
 	return uname;

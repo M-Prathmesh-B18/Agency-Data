@@ -35,7 +35,7 @@
      {
     	 UserPojo us=new UserPojo();
     	 us.setDate(rs.getString("Date"));
-    	 us.setRegisterId(rs.getString("Registration_No"));
+    	 us.setCustomerNo(rs.getString("Customer_No"));
     	 us.setUname(rs.getString("Name"));
     	 us.setMobile(rs.getString("Mobile_No"));
     	 us.setPrice(rs.getInt("Price"));
@@ -66,7 +66,7 @@
               
                 <tr>
                   <td><%=up.getDate() %></td>
-                  <th scope="row"><%=up.getRegisterId()%></th>
+                  <th scope="row"><%=up.getCustomerNo()%></th>
                   <td><%=up.getUname() %></td>
                   <td><%=up.getMobile() %></td>
                   <td><%=up.getPrice() %></td>

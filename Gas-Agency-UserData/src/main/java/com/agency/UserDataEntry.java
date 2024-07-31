@@ -42,12 +42,17 @@ public class UserDataEntry extends HttpServlet {
     
 
 	 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+{
 		// TODO Auto-generated method stub
 		
 		 PrintWriter pw=response.getWriter();
+		 
 		
-		 String registration_no=request.getParameter("registration");
+		 String Customer_No=request.getParameter("registration");
+		 
+       if(Customer_No.length()==10)
+      { 
 		 String name=request.getParameter("username");
 		 String mobile_no=request.getParameter("mobileno");
 		 Integer price=Integer.parseInt(request.getParameter("price"));
@@ -65,7 +70,7 @@ public class UserDataEntry extends HttpServlet {
 		 
 	     try {
 	    	ps.setString(1, date);
-			ps.setString(2,registration_no);
+			ps.setString(2, Customer_No);
 			ps.setString(3, name);
 			ps.setString(4, mobile_no);
 			ps.setInt(5,price);
@@ -82,7 +87,10 @@ public class UserDataEntry extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  
-	}
+    }else {
+    	pw.println("enter valid customer number");
+    }
+}
 
 	 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
