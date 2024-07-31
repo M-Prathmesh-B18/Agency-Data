@@ -24,7 +24,7 @@
               <thead>
                 <tr>
                    <th scope="col">Date</th>
-                  <th scope="col">Registration No</th>
+                  <th scope="col">Customer No</th>
                   <th scope="col">Name</th>
                   <th scope="col">Mobile No</th>
                   <th scope="col">Price</th>
@@ -38,7 +38,7 @@
               <form action="UserDataEntry" method="post">  
                 <tr>
                   <td><%=date %></td>
-                  <th scope="row"> <input type="text" placeholder="Enter Registration no" name="registration"> </th>
+                  <th scope="row"> <input type="text" placeholder="Enter Customer No" name="registration"> </th>
                   <td><input type="text" placeholder="Enter Name" name="username"></td>
                   <td><input type="text" placeholder="Enter Mobile No" name="mobileno"></td>
                   <td><input type="text" placeholder="Enter Price" name="price"></td>

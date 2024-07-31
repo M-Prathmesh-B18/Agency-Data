@@ -24,6 +24,12 @@ public class ExperimentalPage extends HttpServlet {
 		 String date =currentDate.format(formater);
 		 PrintWriter pw=response.getWriter();
 		 pw.println(date);
+		 String id="12345678920";
+		 if(id.length()==10) {
+			 pw.println("ok");
+		 }else {
+			 pw.println("no");
+		 }
 	}
 
 	 
