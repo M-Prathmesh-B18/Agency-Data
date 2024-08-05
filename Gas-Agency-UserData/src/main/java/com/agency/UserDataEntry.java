@@ -88,7 +88,8 @@ public class UserDataEntry extends HttpServlet {
 			e.printStackTrace();
 		}  
     }else {
-    	pw.println("enter valid customer number");
+    	RequestDispatcher rd=request.getRequestDispatcher("popFile.jsp");
+	     rd.forward(request, response);
     }
 }
 

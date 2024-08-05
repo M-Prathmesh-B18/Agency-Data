@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +20,7 @@ public class ExperimentalPage extends HttpServlet {
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		LocalDate currentDate=LocalDate.now();
 		 DateTimeFormatter formater=DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		 String date =currentDate.format(formater);
@@ -28,7 +30,8 @@ public class ExperimentalPage extends HttpServlet {
 		 if(id.length()==10) {
 			 pw.println("ok");
 		 }else {
-			 pw.println("no");
+			 RequestDispatcher rd=request.getRequestDispatcher("popupFile.html");
+		     rd.forward(request, response);
 		 }
 	}
 
