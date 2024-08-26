@@ -25,7 +25,7 @@
   <%
      Class.forName("com.mysql.jdbc.Driver");
      Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/GasAgencyDB","root","mprathamsql1810");
-     PreparedStatement ps=conn.prepareStatement("select*from userdata order by Date desc");
+     PreparedStatement ps=conn.prepareStatement("select*from userdata order by Date asc");
      ResultSet rs=ps.executeQuery();
      
      ArrayList<UserPojo> arr=new ArrayList<>();

@@ -6,6 +6,7 @@ import java.io.IOException;
 
 
 
+
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
@@ -20,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 
  
 @WebServlet("/UserDataEntry")
-public class UserDataEntry extends HttpServlet {
+public class UserDataEntry<html> extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	PreparedStatement ps;
 	
@@ -44,9 +45,10 @@ public class UserDataEntry extends HttpServlet {
 	 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 {
-		// TODO Auto-generated method stub
-		
-		 PrintWriter pw=response.getWriter();
+		// TODO Auto-generated method 
+	     response.setContentType("text/html");
+        
+	     PrintWriter pw=response.getWriter();
 		 
 		
 		 String Customer_No=request.getParameter("registration");
@@ -88,8 +90,16 @@ public class UserDataEntry extends HttpServlet {
 			e.printStackTrace();
 		}  
     }else {
-    	RequestDispatcher rd=request.getRequestDispatcher("popFile.jsp");
-	     rd.forward(request, response);
+    	 pw.println("<html>\r\n"
+    	 		+ "<head>\r\n"
+    	 		+ "<meta charset=\"ISO-8859-1\">\r\n"
+    	 		+ "<title>Insert title here</title>\r\n"
+    	 		+ "</head>\r\n"
+    	 		+ "<body>\r\n"
+    	 		+ "        <script type=\"text/javascript\">alert(\"please Enter the valid information\")</script>\r\n"
+    	 		+ "         \r\n"
+    	 		+ "</body>\r\n"
+    	 		+ "</html>");
     }
 }
 
